@@ -13,13 +13,14 @@ public class PriceServiceImpl implements PriceService {
         Double price = priceRequest.getBasePrice();
         final String type = priceRequest.getType();
         String message = "";
+        try{
         if(type.equals("leasing")){
             Integer months = priceRequest.getMonths();
             if(months == null) {
                 months = 60;
             }
             price += priceRequest.getMonths()*20;
-            message = "Leasing for "+priceRequest.getMonths()+" with average installment"+price/priceRequest.getMonths()
+            message = "Leasing for "+priceRequest.getMonths()+" with average installment: "+price/priceRequest.getMonths()
                     +". Total price: "+price;
         }
         else if(type.equals("cash")){
@@ -30,5 +31,9 @@ public class PriceServiceImpl implements PriceService {
             throw new InvalidOperationException();
         }
         return PriceResponse.builder().price(price).message(message).build();
+        }
+        catch (Exception e){
+            throw new InvalidOperationException();
+        }
     }
 }
