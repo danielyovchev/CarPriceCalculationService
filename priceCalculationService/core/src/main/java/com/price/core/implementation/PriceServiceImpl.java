@@ -12,15 +12,23 @@ public class PriceServiceImpl implements PriceService {
     public PriceResponse getCorePrice(PriceRequest priceRequest) {
         Double price = priceRequest.getBasePrice();
         final String type = priceRequest.getType();
+        String message = "";
         if(type.equals("leasing")){
+            Integer months = priceRequest.getMonths();
+            if(months == null) {
+                months = 60;
+            }
             price += priceRequest.getMonths()*20;
+            message = "Leasing for "+priceRequest.getMonths()+" with average installment"+price/priceRequest.getMonths()
+                    +". Total price: "+price;
         }
         else if(type.equals("cash")){
-            
+            price = priceRequest.getBasePrice();
+            message = "Car bought cash. Total price: "+price;
         }
         else {
             throw new InvalidOperationException();
         }
-        return PriceResponse.builder().price(price).build();
+        return PriceResponse.builder().price(price).message(message).build();
     }
 }

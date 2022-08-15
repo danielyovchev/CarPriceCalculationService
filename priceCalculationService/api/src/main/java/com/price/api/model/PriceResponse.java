@@ -8,4 +8,5 @@ import lombok.Setter;
 @Getter @Setter(AccessLevel.PACKAGE) @Builder
 public class PriceResponse {
     private Double price;
+    private String message;
 }
