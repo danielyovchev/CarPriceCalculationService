@@ -18,7 +18,7 @@ public class PriceServiceImpl implements PriceService {
     @Override
     public PriceResponse getCorePrice(PriceRequest priceRequest) {
         Double price = priceRequest.getBasePrice();
-        Double discount = getPriceGroupService.priceGroup(priceRequest.getCustomerPurchasedCars());
+        final Double discount = getPriceGroupService.priceGroup(priceRequest.getCustomerPurchasedCars());
         final String type = priceRequest.getType();
         String message = "";
         try{
