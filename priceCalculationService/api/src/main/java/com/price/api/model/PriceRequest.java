@@ -2,8 +2,6 @@ package com.price.api.model;
 
 import lombok.*;
 
-import javax.validation.constraints.Min;
-
 @Getter @Setter(AccessLevel.PRIVATE) @Builder
 public class PriceRequest {
     private String type;
