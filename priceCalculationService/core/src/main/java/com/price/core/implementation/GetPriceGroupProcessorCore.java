@@ -1,11 +1,11 @@
 package com.price.core.implementation;
 
 import com.price.core.exception.InvalidBoughtCarsException;
-import com.price.core.interfaces.GetPriceGroupService;
+import com.price.core.interfaces.GetPriceGroupProcessor;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GetPriceGroupServiceImpl implements GetPriceGroupService {
+public class GetPriceGroupProcessorCore implements GetPriceGroupProcessor {
     @Override
     public Double priceGroup(Integer count) {
         Double discount = 0.0;

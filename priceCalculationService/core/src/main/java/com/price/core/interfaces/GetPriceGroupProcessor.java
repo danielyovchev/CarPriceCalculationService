@@ -1,5 +1,5 @@
 package com.price.core.interfaces;
 
-public interface GetPriceGroupService {
+public interface GetPriceGroupProcessor {
     Double priceGroup(Integer count);
 }
