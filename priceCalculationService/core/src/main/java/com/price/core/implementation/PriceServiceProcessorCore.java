@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PriceServiceProcessorCore implements PriceServiceProcessor {
+    //calculating car price by getting the discount for the customer and depending on the deal type
     private final GetPriceGroupProcessor getPriceGroupProcessor;
 
     public PriceServiceProcessorCore(GetPriceGroupProcessor getPriceGroupProcessor) {
