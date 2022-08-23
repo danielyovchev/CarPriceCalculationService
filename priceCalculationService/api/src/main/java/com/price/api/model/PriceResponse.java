@@ -1,11 +1,8 @@
 package com.price.api.model;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter @Setter(AccessLevel.PACKAGE) @Builder
+@Getter @Setter(AccessLevel.PACKAGE) @Builder @EqualsAndHashCode
 public class PriceResponse {
     private Double price;
     private String message;
