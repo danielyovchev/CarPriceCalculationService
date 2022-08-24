@@ -2,7 +2,7 @@ package com.price.api.model;
 
 import lombok.*;
 
-@Getter @Setter(AccessLevel.PRIVATE) @Builder
+@Getter @Setter(AccessLevel.PRIVATE) @Builder @EqualsAndHashCode
 public class PriceRequest {
     private String type;
     private Double basePrice;
